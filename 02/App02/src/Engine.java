@@ -33,42 +33,13 @@ public class Engine {
      * @param scanner
      */
     public void Method2(Scanner scanner) {
-        Log("Method1: the first n natural numbers divisible by k without remainder:");
-
-        int n;
-        int k;
+        Log("Method2: the first n natural numbers divisible by k without remainder:");
 
         Log("enter N > 0 - the number of natural numbers");
-        while (true) {
-            if (scanner.hasNextInt()) {
-                n = scanner.nextInt();
-            } else {
-                scanner.next();
-                Log("this is not a natural number, please try again");
-                continue;
-            }
-            if (n > 0){
-                break;
-            } else {
-                Log("N <= 0, please try again");
-            }
-        }
+        int n = GetPositiveIntValue(scanner);
 
         Log("enter K > 0 - natural divisor");
-        while (true) {
-            if (scanner.hasNextInt()) {
-                k = scanner.nextInt();
-            } else {
-                scanner.next();
-                Log("this is not a natural number, please try again");
-                continue;
-            }
-            if (k > 0){
-                break;
-            } else {
-                Log("K <= 0, please try again");
-            }
-        }
+        int k = GetPositiveIntValue(scanner);
 
         System.out.print("result numbers:");
         for (int ind = 1; ind <= n; ind++) {
@@ -145,34 +116,11 @@ public class Engine {
     public void Method4(Scanner scanner) {
         Log("Method4: approximation of the exponential function value by the Maclaurin series of degree N:");
 
-        double x;
         Log("enter X  - the double number");
-        while (true) {
-            if (scanner.hasNextDouble()) {
-                x = scanner.nextDouble();
-                break;
-            } else {
-                scanner.next();
-                Log("this is not a double number, please try again");
-            }
-        }
+        double x = GetDoubleValue(scanner);
 
-        int n;
         Log("enter N > 0  - the natural number");
-        while (true) {
-            if (scanner.hasNextInt()) {
-                n = scanner.nextInt();
-            } else {
-                scanner.next();
-                Log("this is not a natural number, please try again");
-                continue;
-            }
-            if (n > 0){
-                break;
-            } else {
-                Log("N <= 0, please try again");
-            }
-        }
+        int n = GetPositiveIntValue(scanner);
 
         System.out.printf("Math.exp(x) = %.0f \n", Math.exp(x));
 
@@ -292,5 +240,35 @@ public class Engine {
         return result;
     }
 
+    private int GetPositiveIntValue(Scanner scanner) {
+        int result;
+        while (true) {
+            if (scanner.hasNextInt()) {
+                result = scanner.nextInt();
+            } else {
+                scanner.next();
+                Log("this is not a natural number, please try again");
+                continue;
+            }
+            if (result > 0){
+                return result;
+            } else {
+                Log("number <= 0, please try again");
+            }
+        }
+    }
+
+    private double GetDoubleValue(Scanner scanner){
+        double result;
+        while (true) {
+            if (scanner.hasNextDouble()) {
+                result = scanner.nextDouble();
+                return result;
+            } else {
+                scanner.next();
+                Log("this is not a double number, please try again");
+            }
+        }
+    }
 }
 
