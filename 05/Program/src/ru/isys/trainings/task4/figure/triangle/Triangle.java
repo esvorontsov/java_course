@@ -10,7 +10,7 @@ public abstract class Triangle implements Figure {
     private double sideB;
     private double angle;
 
-    public Triangle(double sideA, double sideB, double angle) {
+    public Triangle(double sideA, double sideB, double angle) throws IllegalArgumentException {
         checkValue(sideA);
         this.sideA = sideA;
         checkValue(sideB);

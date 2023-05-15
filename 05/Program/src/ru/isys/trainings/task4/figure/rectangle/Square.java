@@ -1,7 +1,7 @@
 package ru.isys.trainings.task4.figure.rectangle;
 
 public class Square extends Rectangle {
-    public Square(double side) {
+    public Square(double side) throws IllegalArgumentException {
         super(side, side);
     }
 

@@ -3,7 +3,7 @@ package ru.isys.trainings.task4.figure.triangle;
 import static java.lang.Math.sqrt;
 
 public class RectangularTriangle extends Triangle{
-    public RectangularTriangle(double sideA, double sideB) {
+    public RectangularTriangle(double sideA, double sideB) throws IllegalArgumentException {
         super(sideA, sideB, 90);
     }
 

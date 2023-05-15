@@ -6,7 +6,7 @@ public class Rectangle implements Figure {
     private double sideA;
     private double sideB;
 
-    public Rectangle(double sideA, double sideB){
+    public Rectangle(double sideA, double sideB) throws IllegalArgumentException {
         checkValue(sideA);
         this.sideA = sideA;
         checkValue(sideB);
@@ -17,7 +17,7 @@ public class Rectangle implements Figure {
         return sideA;
     }
 
-    public void setSideA(int side) {
+    public void setSideA(int side) throws IllegalArgumentException {
         checkValue(side);
         this.sideA = side;
     }
@@ -26,7 +26,7 @@ public class Rectangle implements Figure {
         return sideB;
     }
 
-    public void setSideB(int side) {
+    public void setSideB(int side) throws IllegalArgumentException {
         checkValue(side);
         this.sideB = side;
     }
