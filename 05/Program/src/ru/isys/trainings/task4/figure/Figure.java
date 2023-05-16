@@ -4,9 +4,9 @@ public interface Figure {
     public double getArea();
     public double getPerimeter();
 
-    default void checkValue(double value) throws IllegalArgumentException {
+    default void checkValue(double value) throws NegativeValueException {
         if (value <= 0){
-            throw new IllegalArgumentException(String.format("illegal value of parameter: %.2f", value));
+            throw new NegativeValueException(value);
         }
     }
 }

@@ -1,7 +1,9 @@
 package ru.isys.trainings.task4.figure.triangle;
 
+import ru.isys.trainings.task4.figure.NegativeValueException;
+
 public class EquilateralTriangle extends Triangle{
-    public EquilateralTriangle(double side) throws IllegalArgumentException {
+    public EquilateralTriangle(double side) throws NegativeValueException {
         super(side, side, 60);
     }
 

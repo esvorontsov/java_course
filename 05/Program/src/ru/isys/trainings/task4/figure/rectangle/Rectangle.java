@@ -1,12 +1,13 @@
 package ru.isys.trainings.task4.figure.rectangle;
 
 import ru.isys.trainings.task4.figure.Figure;
+import ru.isys.trainings.task4.figure.NegativeValueException;
 
 public class Rectangle implements Figure {
     private double sideA;
     private double sideB;
 
-    public Rectangle(double sideA, double sideB) throws IllegalArgumentException {
+    public Rectangle(double sideA, double sideB) throws NegativeValueException {
         checkValue(sideA);
         this.sideA = sideA;
         checkValue(sideB);
@@ -17,7 +18,7 @@ public class Rectangle implements Figure {
         return sideA;
     }
 
-    public void setSideA(int side) throws IllegalArgumentException {
+    public void setSideA(int side) throws NegativeValueException {
         checkValue(side);
         this.sideA = side;
     }
@@ -26,7 +27,7 @@ public class Rectangle implements Figure {
         return sideB;
     }
 
-    public void setSideB(int side) throws IllegalArgumentException {
+    public void setSideB(int side) throws NegativeValueException {
         checkValue(side);
         this.sideB = side;
     }

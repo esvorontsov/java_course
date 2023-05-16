@@ -1,9 +1,11 @@
 package ru.isys.trainings.task4.figure.triangle;
 
+import ru.isys.trainings.task4.figure.NegativeValueException;
+
 import static java.lang.Math.sqrt;
 
 public class RectangularTriangle extends Triangle{
-    public RectangularTriangle(double sideA, double sideB) throws IllegalArgumentException {
+    public RectangularTriangle(double sideA, double sideB) throws NegativeValueException {
         super(sideA, sideB, 90);
     }
 

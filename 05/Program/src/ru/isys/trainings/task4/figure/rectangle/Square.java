@@ -1,7 +1,9 @@
 package ru.isys.trainings.task4.figure.rectangle;
 
+import ru.isys.trainings.task4.figure.NegativeValueException;
+
 public class Square extends Rectangle {
-    public Square(double side) throws IllegalArgumentException {
+    public Square(double side) throws NegativeValueException {
         super(side, side);
     }
 

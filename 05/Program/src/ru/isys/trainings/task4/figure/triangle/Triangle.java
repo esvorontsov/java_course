@@ -1,6 +1,7 @@
 package ru.isys.trainings.task4.figure.triangle;
 
 import ru.isys.trainings.task4.figure.Figure;
+import ru.isys.trainings.task4.figure.NegativeValueException;
 
 import static java.lang.Math.sin;
 
@@ -10,7 +11,7 @@ public abstract class Triangle implements Figure {
     private double sideB;
     private double angle;
 
-    public Triangle(double sideA, double sideB, double angle) throws IllegalArgumentException {
+    public Triangle(double sideA, double sideB, double angle) throws NegativeValueException {
         checkValue(sideA);
         this.sideA = sideA;
         checkValue(sideB);
