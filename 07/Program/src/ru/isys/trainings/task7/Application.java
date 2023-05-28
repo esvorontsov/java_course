@@ -141,6 +141,10 @@ public class Application {
                 () -> { while (arrayIterator.hasNext()) { arrayIterator.next(); } },
                 () -> { while (linkedIterator.hasNext()) { linkedIterator.next(); } }
         );
+        compareTime("проход по всему списку методом forEach:: ArrayList: %d ns, LinkedList: %d ns",
+                () -> { arrayList.forEach((s) -> {}); },
+                () -> { linkedList.forEach((s) -> {}); }
+        );
     }
 
     /**
