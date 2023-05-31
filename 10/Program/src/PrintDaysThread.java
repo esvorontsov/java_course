@@ -4,7 +4,6 @@ public class PrintDaysThread extends Thread {
     private DayPrinter dayPrinter;
 
     public PrintDaysThread(int monthNumber, DayPrinter dayPrinter){
-        super();
         this.monthNumber = monthNumber;
         this.dayPrinter = dayPrinter;
     }
