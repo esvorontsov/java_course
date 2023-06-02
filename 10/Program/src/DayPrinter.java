@@ -15,14 +15,11 @@ public class DayPrinter {
                 Thread.currentThread().interrupt();
                 nextMonth();
             }
-            notifyAll();
             return;
         }
 
         // проверка потока на соответствие месяца
         if (monthNumber != monthNum){
-            wait();
-            notifyAll();
             return;
         }
 
@@ -41,7 +38,6 @@ public class DayPrinter {
 
         // переходим на следущий месяц
         nextMonth();
-        notifyAll();
     }
 
     private void nextMonth(){
