@@ -8,18 +8,18 @@ public class DayPrinter {
     }
 
     public synchronized void Execute(int monthNum) throws InterruptedException {
-        // завершение вывода
-        if (isFinished) {
-            if (monthNumber == monthNum) {
-                System.out.println(String.format("завершаем %s", Thread.currentThread().toString()));
-                Thread.currentThread().interrupt();
-                nextMonth();
-            }
-            return;
+
+        // ждем совпадения месяца
+        while (monthNumber != monthNum){
+            wait();
         }
 
-        // проверка потока на соответствие месяца
-        if (monthNumber != monthNum){
+        // завершение вывода
+        if (isFinished) {
+            System.out.println(String.format("завершаем %s", Thread.currentThread().toString()));
+            Thread.currentThread().interrupt();
+            nextMonth();
+            notifyAll();
             return;
         }
 
@@ -38,6 +38,7 @@ public class DayPrinter {
 
         // переходим на следущий месяц
         nextMonth();
+        notifyAll();
     }
 
     private void nextMonth(){

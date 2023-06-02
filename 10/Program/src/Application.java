@@ -14,7 +14,7 @@ public class Application {
         }
 
         // спим 30 сек
-        Thread.sleep(30000);
+        Thread.sleep(20000);
 
         // запускаем завершение потоков
         dayPrinter.finish();
