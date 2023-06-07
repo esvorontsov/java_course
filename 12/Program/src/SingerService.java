@@ -8,7 +8,7 @@ public class SingerService {
     }
 
     public List<Singer> filterBySongName(String songName) {
-        return singerDao.getSingers().stream()
+        return singerDao.findSingers().stream()
                 .filter(s -> s.getAlbums().stream()
                         .anyMatch(a -> a.getSongs().stream()
                                 .anyMatch(song -> song.getName().toLowerCase().contains(songName.toLowerCase()))))
@@ -16,7 +16,7 @@ public class SingerService {
     }
 
     public List<Singer> filterByMinAlbumsCount(int minAlbumsCount) {
-        return singerDao.getSingers().stream()
+        return singerDao.findSingers().stream()
                 .filter(s -> s.getAlbums().size() >= minAlbumsCount)
                 .toList();
     }

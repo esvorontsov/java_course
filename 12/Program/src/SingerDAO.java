@@ -1,7 +1,7 @@
 import java.util.List;
 
 public interface SingerDAO {
-    List<Singer> getSingers();
+    List<Singer> findSingers();
 
-    void setSingers(List<Singer> singers);
+    void saveSingers(List<Singer> singers);
 }

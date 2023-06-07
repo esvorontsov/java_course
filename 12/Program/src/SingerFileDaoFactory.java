@@ -1,3 +1,8 @@
+import java.io.File;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+
 public class SingerFileDaoFactory implements AbstractSingerDaoFactory{
 
     private static final SingerFileDaoFactory instance = new SingerFileDaoFactory();
@@ -12,6 +17,8 @@ public class SingerFileDaoFactory implements AbstractSingerDaoFactory{
 
     @Override
     public SingerDAO createSingerDao() {
-        return new SingerFileDao();
+        String rootPath = new File("").getAbsolutePath().concat("\\music");
+        String resultPath = new File("").getAbsolutePath().concat("\\result");
+        return new SingerFileDao(Paths.get(rootPath), Paths.get(resultPath));
     }
 }

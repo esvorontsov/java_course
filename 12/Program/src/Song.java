@@ -1,8 +1,8 @@
 public class Song {
     private String name;
-    private int size;
+    private long size;
 
-    public Song(String name, int size){
+    public Song(String name, long size){
         this.name = name;
         this.size = size;
     }
@@ -16,7 +16,7 @@ public class Song {
         return this.name;
     }
 
-    public int getSize(){
+    public long getSize(){
         return this.size;
     }
 
