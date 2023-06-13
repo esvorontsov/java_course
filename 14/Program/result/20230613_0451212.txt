@@ -1,0 +1,24 @@
+Singer: singer2
+  Album: album21
+    Song: song211, 3078062
+    Song: song212_, 1904003
+    Song: song213, 1586243
+  Album: album22
+    Song: song221, 3078062
+    Song: song222_, 1904003
+    Song: song223, 1586243
+
+Singer: singer3
+  Album: album31
+    Song: song311, 3078062
+    Song: song312_, 1904003
+    Song: song313, 1586243
+  Album: album32
+    Song: song321, 3078062
+    Song: song322_, 1904003
+    Song: song323, 1586243
+  Album: album33
+    Song: song331, 3078062
+    Song: song332_, 1904003
+    Song: song333, 1586243
+
