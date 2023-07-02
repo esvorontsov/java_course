@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import ru.isys.task16.aspects.Timed;
 import ru.isys.task16.dao.SingerDAO;
 import ru.isys.task16.entities.Singer;
 
@@ -17,6 +18,7 @@ public class SingerService {
         this.singerDao = singerDao;
     }
 
+    @Timed
     public void filterBySongName(String songName) {
         List<Singer> result = singerDao.findSingers().stream()
                 .filter(s -> s.getAlbums().stream()
@@ -26,6 +28,7 @@ public class SingerService {
         singerDao.saveSingers(result);
     }
 
+    @Timed
     public void filterByMinAlbumsCount(int minAlbumsCount) {
         List<Singer> result = singerDao.findSingers().stream()
                 .filter(s -> s.getAlbums().size() >= minAlbumsCount)
